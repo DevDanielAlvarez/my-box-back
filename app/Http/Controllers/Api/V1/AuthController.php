@@ -23,7 +23,7 @@ class AuthController extends Controller
         $validatedFields = $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required'
+            'password' => 'required|min:6'
         ]);
 
         //create new user   
