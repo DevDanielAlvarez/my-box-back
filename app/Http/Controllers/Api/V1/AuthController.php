@@ -22,7 +22,7 @@ class AuthController extends Controller
         //valite request fields
         $validatedFields = $request->validate([
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required'
         ]);
 
